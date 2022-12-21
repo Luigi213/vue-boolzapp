@@ -33,8 +33,7 @@
 /* content left */
 
     .col-left{
-        width: 40%;
-        border-right: 1px solid rgba(220,212,206,1);
+        width: 39%;
     }
 
     /* utente */
@@ -54,6 +53,7 @@
 
     .icons{
         width: 20%;
+        margin-right: 20px;
         justify-content: space-between;
     }
 
@@ -81,6 +81,26 @@
 
     .notification-mess a{
         color: #7295A1;
+    }
+
+    /* search bar */
+
+    .search{
+        background-color: #EAEAEA;
+        align-items: center;
+        padding: 7px;
+    }
+
+    .search label i{
+        background-color: white;
+        padding: 10px 40px;
+        color: #B1B1B1;
+    }
+
+    #search-box{
+        width: 100%;
+        border: none;
+        padding: 10px 0;
     }
 
 /* end col-left */
