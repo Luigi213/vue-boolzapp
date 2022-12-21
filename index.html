@@ -75,7 +75,12 @@
                         <div v-for="(mess, messIndex) in elem.messages">
                             <div class="send d-flex">
                                 <div class="position" v-if="(mess.status === 'sent')">
-                                    <p>{{ mess.message }}</p>
+                                    <div class="send-mess d-flex align-center">
+                                        <p>{{ mess.message }}</p>
+                                        <div class="delete d-flex">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
                                     <div class="seen">
                                         <span>15:50</span>
                                     </div>
@@ -83,7 +88,14 @@
                             </div>
                             <div class="received">
                                 <div class="position" v-if="(mess.status === 'received')">
-                                    <p>{{ mess.message }}</p>
+                                    <div class="rece-mess d-flex align-center">
+                                        <div class="reci-mess d-flex align-center">
+                                            <p>{{ mess.message }}</p>
+                                            <div class="delete d-flex">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </div>                                
+                                        </div>                                        
+                                    </div>
                                     <div class="seen">
                                         <span>16:15</span>
                                     </div>

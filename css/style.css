@@ -210,20 +210,32 @@
         flex-direction: column;
     }
     
-    .send p{
+    .send .send-mess{
+        width: 100%;
+        justify-content: space-between;
         background-color: #D5F9BA;
+        border-radius: 10px;
     }
 
     .send p, .received p{
-        margin-top: 10px;
         padding: 13px;
         font-size: 14px;
-        border-radius: 10px;
     }
 
     .position{
         width: 40%;
         position: relative;
+    }
+
+    .position:hover .delete{
+        display: block;
+        cursor: pointer;
+    }
+
+    .delete{
+        width: 12%;
+        color: #acacac;
+        display: none;
     }
 
     .seen{
@@ -243,8 +255,13 @@
         position: relative;
     }
     
-    .received p{
+    .received .rece-mess{
         background-color: white;
+        border-radius: 10px;
+    }
+
+    .reci-mess,  .reci-mess p{
+        width: 100%;
     }
 
     /* chat footer */
@@ -286,6 +303,3 @@
 
 /* end content right */
 
-.d-none{
-    display: none;
-}
