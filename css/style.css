@@ -110,6 +110,11 @@
         height: calc(100% - (7% + 12% + 10%));
     }
 
+    .contacts li:hover{
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
     .img-contact{
         background-color: white;
         padding: 10px 20px;

@@ -39,7 +39,7 @@
                     </div>
                     <div class="contacts">
                         <ul>
-                            <li class="img-contact d-flex align-center" v-for="(elem, index) in contacts">
+                            <li class="img-contact d-flex align-center" v-for="(elem, index) in contacts" @click="selectChat(index)">
                                 <img :src="elem.avatar" :alt="elem.name">
                                 <div class="text d-flex">
                                     <div>
@@ -71,28 +71,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="chat-main" >
-                        <div class="send d-flex">
-                            <div class="position">
-                                <p>{{ elem.messages[contactsActive].message }}</p>
-                                <div class="seen">
-                                    <span>15:50</span>
+                    <div class="chat-main">
+                        <div v-for="(mess, messIndex) in elem.messages">
+                            <div class="send d-flex">
+                                <div class="position" v-if="(mess.status === 'sent')">
+                                    <p>{{ mess.message }}</p>
+                                    <div class="seen">
+                                        <span>15:50</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="send d-flex">
-                            <div class="position">
-                                <p>{{ elem.messages[contactsActive].message }}</p>
-                                <div class="seen">
-                                    <span>15:50</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="received">
-                            <div class="position">
-                                <p>{{ elem.messages[contactsActive].message }}</p>
-                                <div class="seen">
-                                    <span>16:15</span>
+                            <div class="received">
+                                <div class="position" v-if="(mess.status === 'received')">
+                                    <p>{{ mess.message }}</p>
+                                    <div class="seen">
+                                        <span>16:15</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
