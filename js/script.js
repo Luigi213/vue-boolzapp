@@ -176,14 +176,14 @@ createApp({
     },
     methods: {
         selectChat(index){
-            this.contactsActive = index
+            this.contactsActive = index;
         },
         addMessage(){
             let mess = {
                 message: this.newMessage,
                 status: 'sent'
             }
-            this.contacts[this.contactsActive].messages.push(mess)
+            this.contacts[this.contactsActive].messages.push(mess);
             this.newMessage = '';
         },
         addReceived(){
@@ -191,23 +191,26 @@ createApp({
                 message: this.messageBot,
                 status: 'received'
             }
-            this.contacts[this.contactsActive].messages.push(messReceived)
+            this.contacts[this.contactsActive].messages.push(messReceived);
             this.newMessage = '';
         },
         timeOut(){
-            setTimeout(this.addReceived,1000)
+            setTimeout(this.addReceived,1000);
         },
         searchTask(){
             let searchFriend;
             if(this.search != ''){
                 searchFriend = this.contacts.filter((elem) => {
-                   return elem.name.toLowerCase().includes(this.search)
+                   return elem.name.toLowerCase().includes(this.search);
                 })
             }
             else{
-                return searchFriend = this.contacts
+                return searchFriend = this.contacts;
             }
             return searchFriend
+        },
+        removeMessage(messIndex){
+            let remove = this.contacts[this.contactsActive].messages.splice(messIndex, 1);
         }
     },
 }).mount('#app')

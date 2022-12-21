@@ -79,6 +79,10 @@
                                         <p>{{ mess.message }}</p>
                                         <div class="delete d-flex">
                                             <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            <div class="accordion-send">
+                                                <p>Message info</p>
+                                                <p @click="removeMessage(messIndex)">Delete message</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="seen">
@@ -93,6 +97,10 @@
                                             <p>{{ mess.message }}</p>
                                             <div class="delete d-flex">
                                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                <div id="accordion-rece">
+                                                    <p>Message info</p>
+                                                    <p @click="removeMessage(messIndex)">Delete message</p>
+                                                </div>
                                             </div>                                
                                         </div>                                        
                                     </div>

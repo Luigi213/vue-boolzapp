@@ -230,6 +230,19 @@
     .position:hover .delete{
         display: block;
         cursor: pointer;
+        position: relative;
+    }
+
+    .accordion-send, #accordion-rece{
+        position: absolute;
+        right: 10%;
+        top: 100%;
+        z-index: 99;
+        background-color: white;
+    }
+
+    .accordion-send p, #accordion-rece p{
+        width: 150px;
     }
 
     .delete{
