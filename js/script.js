@@ -205,7 +205,7 @@ createApp({
                 })
             }
             else{
-                return this.contacts
+                return searchFriend = this.contacts
             }
             return searchFriend
         }

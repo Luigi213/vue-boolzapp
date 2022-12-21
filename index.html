@@ -57,7 +57,7 @@
                 <div class="col-right" :class="(contactsActive === index) ? 'active' : ''" v-for="(elem, index) in contacts">
                     <div class="chat-header d-flex align-center" >
                         <div class="main-contact d-flex align-center">
-                            <img src="./img/avatar_1.jpg" alt="avatar_1">
+                            <img :src="elem.avatar" alt="avatar_1">
                             <div class="text-main d-flex align-center">
                                 <div>
                                     {{ elem.name }}
