@@ -37,6 +37,20 @@
                         <label for="search-box"><i class="fa-solid fa-magnifying-glass"></i></label>
                         <input type="search" name="search-box" id="search-box" placeholder="Cerca o inizia una nuova chat">
                     </div>
+                    <div class="contact">
+                        <div class="img-contact d-flex" v-for="(elem, index) in contacts">
+                            <img :src="elem.avatar" :alt="elem.name">
+                            <div class="text d-flex">
+                                <div>
+                                    {{ elem.name }} 
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                                <div class="hours">
+                                    <span>12:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-right">
                     

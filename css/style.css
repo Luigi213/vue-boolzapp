@@ -20,7 +20,7 @@
 .container{
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(0deg, rgba(220,212,206,1) 80%, rgba(0,150,136,1) 80%, rgba(0,150,136,1) 100%, rgba(0,150,136,1) 100%);
+    background: linear-gradient(0deg, rgba(220,212,206,1) 84%, rgba(0,150,136,1) 84%, rgba(0,150,136,1) 100%, rgba(0,150,136,1) 100%);
 }
 
 .row{
@@ -34,6 +34,7 @@
 
     .col-left{
         width: 39%;
+        height: 100%;
     }
 
     /* utente */
@@ -43,6 +44,7 @@
         justify-content: space-between;
         background-color: #EAEAEA;
         padding: 10px;
+        height: 10%;
     }
 
     .utente img{
@@ -68,6 +70,7 @@
         background-color: #80d3f7;
         align-items: center;
         padding: 15px 20px;
+        height: 12%;
     }
 
     .notification i{
@@ -89,6 +92,7 @@
         background-color: #EAEAEA;
         align-items: center;
         padding: 7px;
+        height: 7%;
     }
 
     .search label i{
@@ -101,6 +105,44 @@
         width: 100%;
         border: none;
         padding: 10px 0;
+    }
+
+    /* contact */
+    
+    .contact{
+        overflow-y: scroll;
+        height: calc(100% - (7% + 12% + 10%));
+    }
+
+    .img-contact{
+        background-color: white;
+        padding: 10px 20px;
+        align-items: center;
+    }
+
+    .img-contact img{
+        width: 60px;
+        border-radius: 100%;
+        margin-right: 20px;
+    }
+
+    .contact .img-contact:not(.img-contact:first-child){
+        border-top: 1px solid #EAEAEA;
+    }
+
+    .text{
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .text p{
+        font-size: 13px;
+        color: #cdcccc;
+    }
+
+    .hours span{
+        font-size: 10px;
+        color: #cdcccc;
     }
 
 /* end col-left */
