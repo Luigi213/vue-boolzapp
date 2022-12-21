@@ -285,3 +285,7 @@
     }
 
 /* end content right */
+
+.d-none{
+    display: none;
+}

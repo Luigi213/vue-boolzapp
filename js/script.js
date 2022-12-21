@@ -8,6 +8,7 @@ createApp({
             contactsActive: 0,
             newMessage: '',
             messageBot: 'ok',
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -173,6 +174,20 @@ createApp({
             ]
         }
     },
+    computed: {
+        searchTask(){
+            let newContacts = this.contacts
+            console.log(newContacts)
+            let searchFriend;
+            if(this.search != ''){
+                searchFriend = newContacts.filter((elem) => elem.name.toLowerCase().includes(this.search))
+            }
+            else{
+                searchFriend = newContacts
+            }
+            return searchFriend
+        }
+    },
     methods: {
         selectChat(index){
             this.contactsActive = index
@@ -195,6 +210,6 @@ createApp({
         },
         timeOut(){
             setTimeout(this.addReceived,1000)
-        }
+        },
     },
 }).mount('#app')

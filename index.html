@@ -35,11 +35,11 @@
                     </div>
                     <div class="search d-flex align-center">
                         <label for="search-box"><i class="fa-solid fa-magnifying-glass"></i></label>
-                        <input type="search" name="search-box" id="search-box" placeholder="Cerca o inizia una nuova chat">
+                        <input type="search" name="search-box" id="search-box" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="searchTask">
                     </div>
                     <div class="contacts">
                         <ul>
-                            <li class="img-contact d-flex align-center" v-for="(elem, index) in contacts" @click="selectChat(index)">
+                            <li class="img-contact d-flex align-center" v-for="(elem, index) in searchTask" @click="selectChat(index)">
                                 <img :src="elem.avatar" :alt="elem.name">
                                 <div class="text d-flex">
                                     <div>
