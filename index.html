@@ -54,13 +54,13 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-right">
-                    <div class="contact d-flex align-center" >
+                <div class="col-right" :class="(contactsActive === index) ? 'active' : ''" v-for="(elem, index) in contacts">
+                    <div class="chat-header d-flex align-center" >
                         <div class="main-contact d-flex align-center">
                             <img src="./img/avatar_1.jpg" alt="avatar_1">
                             <div class="text-main d-flex align-center">
                                 <div>
-                                    Michele
+                                    {{ elem.name }}
                                     <p>Ultimo accesso oggi alle 12:00</p>
                                 </div>
                                 <div class="icons d-flex">
@@ -70,6 +70,35 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="chat-main" >
+                        <div class="send d-flex">
+                            <div class="position">
+                                <p>{{ elem.messages[contactsActive].message }}</p>
+                                <div class="seen">
+                                    <span>15:50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="send d-flex">
+                            <div class="position">
+                                <p>{{ elem.messages[contactsActive].message }}</p>
+                                <div class="seen">
+                                    <span>15:50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="received">
+                            <div class="position">
+                                <p>{{ elem.messages[contactsActive].message }}</p>
+                                <div class="seen">
+                                    <span>16:15</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-footer">
+
                     </div>
                 </div>
             </div>
