@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-left">
-                    <div class="utente d-flex">
+                    <div class="utente d-flex align-center">
                         <div class="img-utente">
                             <img src="./img/avatar_io.jpg" alt="mine-avatar">
                             <span>Sofia</span>
@@ -26,34 +26,51 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <div class="notification d-flex">
+                    <div class="notification d-flex align-center">
                         <i class="fa-solid fa-bell-slash"></i>
                         <div class="notification-mess">
                             <p>Ricevi notifnche di nuovi messaggi</p>
                             <p><a href="#">Attiva notifche desktop</a></p>
                         </div>
                     </div>
-                    <div class="search d-flex">
+                    <div class="search d-flex align-center">
                         <label for="search-box"><i class="fa-solid fa-magnifying-glass"></i></label>
                         <input type="search" name="search-box" id="search-box" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                    <div class="contact">
-                        <div class="img-contact d-flex" v-for="(elem, index) in contacts">
-                            <img :src="elem.avatar" :alt="elem.name">
-                            <div class="text d-flex">
-                                <div>
-                                    {{ elem.name }} 
-                                    <p>Ultimo messaggio inviato</p>
+                    <div class="contacts">
+                        <ul>
+                            <li class="img-contact d-flex align-center" v-for="(elem, index) in contacts">
+                                <img :src="elem.avatar" :alt="elem.name">
+                                <div class="text d-flex">
+                                    <div>
+                                        {{ elem.name }} 
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
+                                    <div class="hours">
+                                        <span>12:00</span>
+                                    </div>
                                 </div>
-                                <div class="hours">
-                                    <span>12:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-right">
+                    <div class="contact d-flex align-center" >
+                        <div class="main-contact d-flex align-center">
+                            <img src="./img/avatar_1.jpg" alt="avatar_1">
+                            <div class="text-main d-flex align-center">
+                                <div>
+                                    Michele
+                                    <p>Ultimo accesso oggi alle 12:00</p>
+                                </div>
+                                <div class="icons d-flex">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-right">
-                    
                 </div>
             </div>
         </div>
