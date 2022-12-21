@@ -6,6 +6,8 @@ createApp({
     data() {
         return {
             contactsActive: 0,
+            newMessage: '',
+            messageBot: 'ok',
             contacts: [
                 {
                     name: 'Michele',
@@ -130,7 +132,7 @@ createApp({
                     ],
                 },
                     {
-                   name: 'Federico',
+                    name: 'Federico',
                     avatar: './img/avatar_7.jpg',
                     visible: true,
                     messages: [
@@ -174,6 +176,25 @@ createApp({
     methods: {
         selectChat(index){
             this.contactsActive = index
+        },
+        addMessage(){
+            let mess = {
+                message: this.newMessage,
+                status: 'sent'
+            }
+            this.contacts[this.contactsActive].messages.push(mess)
+            this.newMessage = '';
+        },
+        addReceived(){
+            let messReceived = {
+                message: this.messageBot,
+                status: 'received'
+            }
+            this.contacts[this.contactsActive].messages.push(messReceived)
+            this.newMessage = '';
+        },
+        timeOut(){
+            setTimeout(this.addReceived,1000)
         }
     },
 }).mount('#app')
