@@ -42,7 +42,7 @@
                             <li class="img-contact d-flex align-center" v-for="(elem, index) in searchTask()" @click="selectChat(index)">
                                 <img :src="`./img/avatar${elem.avatar}.jpg`" :alt="elem.name">
                                 <div class="text d-flex" v-for="(mess, messIndex) in elem.messages">
-                                    <div>
+                                    <div class="profile-friend">
                                         {{ elem.name }} 
                                         <p>{{ mess.message}}</p>
                                     </div>

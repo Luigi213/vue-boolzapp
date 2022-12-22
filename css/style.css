@@ -139,9 +139,18 @@
         display: none;
     }
 
+    .profile-friend{
+        width: 60%;
+    }
+
     .text p{
         font-size: 13px;
         color: #cdcccc;
+    }
+
+    .hours{
+        width: 40%;
+        text-align: right;
     }
 
     .hours span{
