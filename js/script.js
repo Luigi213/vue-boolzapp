@@ -7,7 +7,6 @@ createApp({
         return {
             selectActive: 0,
             contactsActive: 0,
-            lastMessage: 1,
             newMessage: '',
             messageBot: 'ok',
             search: '',
@@ -19,17 +18,17 @@ createApp({
                     dating: '',
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: `${this.currentDate()}`,
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: `${this.currentDate()}`,
                         message: 'Ricordati di stendere i panni',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 16:15:22',
+                        date: `${this.currentDate()}`,
                         message: 'Tutto fatto!',
                         status: 'received'
                         }
@@ -41,17 +40,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                        date: '20/03/2020 16:30:00',
+                        date: `${this.currentDate()}`,
                         message: 'Ciao come stai?',
                         status: 'sent'
                         },
                         {
-                        date: '20/03/2020 16:30:55',
+                        date: `${this.currentDate()}`,
                         message: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received'
                         },
                         {
-                        date: '20/03/2020 16:35:00',
+                        date: `${this.currentDate()}`,
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
                         }
@@ -63,17 +62,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                        date: '28/03/2020 10:10:40',
+                        date: `${this.currentDate()}`,
                         message: 'La Marianna va in campagna',
                         status: 'received'
                         },
                         {
-                        date: '28/03/2020 10:20:10',
+                        date: `${this.currentDate()}`,
                         message: 'Sicuro di non aver sbagliato chat?',
                         status: 'sent'
                         },
                         {
-                        date: '28/03/2020 16:15:22',
+                        date: `${this.currentDate()}`,
                         message: 'Ah scusa!',
                         status: 'received'
                         }
@@ -85,12 +84,12 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: `${this.currentDate()}`,
                         message: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: `${this.currentDate()}`,
                         message: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                         }
@@ -102,12 +101,12 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: `${this.currentDate()}`,
                         message: 'Ricordati di chiamare la nonna',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: `${this.currentDate()}`,
                         message: 'Va bene, stasera la sento',
                         status: 'received'
                         }
@@ -119,17 +118,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: `${this.currentDate()}`,
                         message: 'Ciao Claudia, hai novità?',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: `${this.currentDate()}`,
                         message: 'Non ancora',
                         status: 'received'
                         },
                         {
-                        date: '10/01/2020 15:51:00',
+                        date: `${this.currentDate()}`,
                         message: 'Nessuna nuova, buona nuova',
                         status: 'sent'
                         }
@@ -141,12 +140,12 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: `${this.currentDate()}`,
                         message: 'Fai gli auguri a Martina che è il suo compleanno!',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: `${this.currentDate()}`,
                         message: 'Grazie per avermelo ricordato, le scrivo subito!',
                         status: 'received'
                         }
@@ -158,17 +157,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: `${this.currentDate()}`,
                         message: 'Ciao, andiamo a mangiare la pizza stasera?',
                         status: 'received'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: `${this.currentDate()}`,
                         message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:51:00',
+                        date: `${this.currentDate()}`,
                         message: 'OK!!',
                         status: 'received'
                         }
@@ -183,7 +182,7 @@ createApp({
         },
         addMessage(){
             let mess = {   
-                date: '10/01/2020 15:50:00', 
+                date: `${this.currentDate()}`, 
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -192,7 +191,7 @@ createApp({
         },
         addReceived(){
             let messReceived = {  
-                date: '10/01/2020 15:51:00',  
+                date: `${this.currentDate()}`,  
                 message: this.messageBot,
                 status: 'received'
             }
@@ -224,7 +223,11 @@ createApp({
             }
             return numLast
             console.log(numLast)
-        }
-
+        },
+        currentDate(){
+            const current = new Date();
+            const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()} ${current.getHours()}:${current.getMinutes()}:${current.getSeconds()}`;
+            return date;
+        }    
     },
 }).mount('#app')
