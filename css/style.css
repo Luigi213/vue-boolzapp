@@ -141,6 +141,7 @@
     }
 
     .hours span{
+        height: 20px;
         font-size: 10px;
         color: #cdcccc;
     }

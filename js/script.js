@@ -5,6 +5,7 @@ const {
 createApp({
     data() {
         return {
+            selectActive: 0,
             contactsActive: 0,
             newMessage: '',
             messageBot: 'ok',
@@ -12,8 +13,9 @@ createApp({
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: './img/avatar_1.jpg',
+                    avatar: '_1',
                     visible: true,
+                    dating: '',
                     messages: [
                         {
                         date: '10/01/2020 15:30:55',
@@ -34,7 +36,7 @@ createApp({
                 },
                 {
                     name: 'Fabio',
-                    avatar: './img/avatar_2.jpg',
+                    avatar: '_2',
                     visible: true,
                     messages: [
                         {
@@ -56,7 +58,7 @@ createApp({
                 },
                 {
                     name: 'Samuele',
-                    avatar: './img/avatar_3.jpg',
+                    avatar: '_3',
                     visible: true,
                     messages: [
                         {
@@ -78,7 +80,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro B.',
-                    avatar: './img/avatar_4.jpg',
+                    avatar: '_4',
                     visible: true,
                     messages: [
                         {
@@ -95,7 +97,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: './img/avatar_5.jpg',
+                    avatar: '_5',
                     visible: true,
                     messages: [
                         {
@@ -112,7 +114,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: './img/avatar_6.jpg',
+                    avatar: '_6',
                     visible: true,
                     messages: [
                         {
@@ -134,7 +136,7 @@ createApp({
                 },
                     {
                     name: 'Federico',
-                    avatar: './img/avatar_7.jpg',
+                    avatar: '_7',
                     visible: true,
                     messages: [
                         {
@@ -151,7 +153,7 @@ createApp({
                 },
                 {
                     name: 'Davide',
-                    avatar: './img/avatar_8.jpg',
+                    avatar: '_8',
                     visible: true,
                     messages: [
                         {
@@ -179,7 +181,8 @@ createApp({
             this.contactsActive = index;
         },
         addMessage(){
-            let mess = {
+            let mess = {   
+                date: '10/01/2020 15:50:00', 
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -187,7 +190,8 @@ createApp({
             this.newMessage = '';
         },
         addReceived(){
-            let messReceived = {
+            let messReceived = {  
+                date: '10/01/2020 15:51:00',  
                 message: this.messageBot,
                 status: 'received'
             }
@@ -211,6 +215,6 @@ createApp({
         },
         removeMessage(messIndex){
             let remove = this.contacts[this.contactsActive].messages.splice(messIndex, 1);
-        }
+        },
     },
 }).mount('#app')

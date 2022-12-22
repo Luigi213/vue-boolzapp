@@ -40,14 +40,14 @@
                     <div class="contacts">
                         <ul>
                             <li class="img-contact d-flex align-center" v-for="(elem, index) in searchTask()" @click="selectChat(index)">
-                                <img :src="elem.avatar" :alt="elem.name">
+                                <img :src="`./img/avatar${elem.avatar}.jpg`" :alt="elem.name">
                                 <div class="text d-flex">
                                     <div>
                                         {{ elem.name }} 
-                                        <p>Ultimo messaggio inviato</p>
+                                        <p>{{elem.messages[selectActive].message}}</p>
                                     </div>
                                     <div class="hours">
-                                        <span>12:00</span>
+                                        <span>{{ elem.messages[selectActive].date }}</span>
                                     </div>
                                 </div>
                             </li>
@@ -57,11 +57,11 @@
                 <div class="col-right" :class="(contactsActive === index) ? 'active' : ''" v-for="(elem, index) in contacts">
                     <div class="chat-header d-flex align-center" >
                         <div class="main-contact d-flex align-center">
-                            <img :src="elem.avatar" alt="avatar_1">
+                            <img :src="`./img/avatar${elem.avatar}.jpg`" alt="avatar_1">
                             <div class="text-main d-flex align-center">
                                 <div>
                                     {{ elem.name }}
-                                    <p>Ultimo accesso oggi alle 12:00</p>
+                                    <p>Ultimo accesso oggi alle {{ elem.messages[selectActive].date }}</p>
                                 </div>
                                 <div class="icons d-flex">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -86,7 +86,7 @@
                                         </div>
                                     </div>
                                     <div class="seen">
-                                        <span>15:50</span>
+                                        <span>{{ mess.date }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                                         </div>                                        
                                     </div>
                                     <div class="seen">
-                                        <span>16:15</span>
+                                        <span>{{ mess.date }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
         </div>
         
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.1.1/luxon.min.js" integrity="sha512-hZKz8wkgOcWeZanRioE6H6AC3OJspzJQyDBB5jLoZ1jIKbYDt5MwVIvU703WwE4sjvKZw9uNmmYlt29xKS27RA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
