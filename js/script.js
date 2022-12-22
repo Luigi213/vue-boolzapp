@@ -220,6 +220,16 @@ createApp({
             const current = new Date();
             const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()} ${current.getHours()}:${current.getMinutes()}:${current.getSeconds()}`;
             return date;
-        }    
+        },  
+        accordion(index){
+            let change = this.contacts[index];
+            if(change.visible === true){
+                change.visible = false
+            }
+            else(
+                change.visible = true
+            )
+            return change
+        }  
     },
 }).mount('#app')

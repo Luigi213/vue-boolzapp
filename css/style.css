@@ -255,6 +255,10 @@
         background-color: white;
     }
 
+    .accordion-send.active, #accordion-rece.active{
+        display: block;
+    }
+
     .accordion-send p, #accordion-rece p{
         width: 150px;
     }

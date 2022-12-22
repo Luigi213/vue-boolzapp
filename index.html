@@ -78,8 +78,8 @@
                                     <div class="send-mess d-flex align-center">
                                         <p>{{ mess.message }}</p>
                                         <div class="delete d-flex">
-                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                            <div class="accordion-send">
+                                            <i class="fa fa-angle-down" aria-hidden="true" @click="accordion(index)"></i>
+                                            <div class="accordion-send" v-show="(!elem.visible) ? 'true' : ''">
                                                 <p>Message info</p>
                                                 <p @click="removeMessage(messIndex)">Delete message</p>
                                             </div>
@@ -96,8 +96,8 @@
                                         <div class="reci-mess d-flex align-center">
                                             <p>{{ mess.message }}</p>
                                             <div class="delete d-flex">
-                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                                <div id="accordion-rece">
+                                                <i class="fa fa-angle-down" aria-hidden="true" @click="accordion(index)"></i>
+                                                <div id="accordion-rece" v-show="(!elem.visible) ? 'true' : ''">
                                                     <p>Message info</p>
                                                     <p @click="removeMessage(messIndex)">Delete message</p>
                                                 </div>
