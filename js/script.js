@@ -216,14 +216,6 @@ createApp({
         removeMessage(messIndex){
             let remove = this.contacts[this.contactsActive].messages.splice(messIndex, 1);
         },
-        lastMess(){
-            let numLast;
-            for(let i=0; i<this.contacts.messages.length; i++){
-               numLast =  this.contacts.messages[i]
-            }
-            return numLast
-            console.log(numLast)
-        },
         currentDate(){
             const current = new Date();
             const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()} ${current.getHours()}:${current.getMinutes()}:${current.getSeconds()}`;
