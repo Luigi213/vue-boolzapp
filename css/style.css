@@ -135,6 +135,10 @@
         width: 100%;
     }
 
+    li .text:not(.text:last-child){
+        display: none;
+    }
+
     .text p{
         font-size: 13px;
         color: #cdcccc;
@@ -316,4 +320,3 @@
     }
 
 /* end content right */
-

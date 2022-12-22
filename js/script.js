@@ -7,6 +7,7 @@ createApp({
         return {
             selectActive: 0,
             contactsActive: 0,
+            lastMessage: 1,
             newMessage: '',
             messageBot: 'ok',
             search: '',
@@ -216,5 +217,14 @@ createApp({
         removeMessage(messIndex){
             let remove = this.contacts[this.contactsActive].messages.splice(messIndex, 1);
         },
+        lastMess(){
+            let numLast;
+            for(let i=0; i<this.contacts.messages.length; i++){
+               numLast =  this.contacts.messages[i]
+            }
+            return numLast
+            console.log(numLast)
+        }
+
     },
 }).mount('#app')
