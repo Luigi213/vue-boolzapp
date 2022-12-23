@@ -180,13 +180,14 @@ createApp({
             this.contactsActive = index;
         },
         addMessage(){
-            let mess = {   
-                date: `${this.currentDate()}`, 
-                message: this.newMessage,
-                status: 'sent'
+            if(this.newMessage != ''){
+                let mess = {   
+                    date: `${this.currentDate()}`, 
+                    message: this.newMessage,
+                    status: 'sent'
+                }
+                this.contacts[this.contactsActive].messages.push(mess);
             }
-            this.contacts[this.contactsActive].messages.push(mess);
-            this.newMessage = '';
         },
         addReceived(){
             let messReceived = {  
@@ -195,10 +196,12 @@ createApp({
                 status: 'received'
             }
             this.contacts[this.contactsActive].messages.push(messReceived);
-            this.newMessage = '';
         },
         timeOut(){
-            setTimeout(this.addReceived,1000);
+            if(this.newMessage != ''){
+                setTimeout(this.addReceived,1000);
+            }
+            this.newMessage = '';
         },
         searchTask(){
             let searchFriend;
