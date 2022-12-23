@@ -116,6 +116,7 @@
     }
 
     .img-contact{
+        position: relative;
         background-color: white;
         padding: 10px 20px;
     }
@@ -130,13 +131,17 @@
         border-top: 1px solid #EAEAEA;
     }
 
-    .text{
-        justify-content: space-between;
+    .compact{
         width: 100%;
     }
 
     li .text:not(.text:last-child){
         display: none;
+    }
+
+    .profile-main{
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .profile-friend{
@@ -149,8 +154,9 @@
     }
 
     .hours{
-        width: 40%;
-        text-align: right;
+        position: absolute;
+        right: 3%;
+        top: 5%;
     }
 
     .hours span{
