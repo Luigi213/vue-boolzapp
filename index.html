@@ -59,15 +59,15 @@
                         <div class="main-contact d-flex align-center">
                             <img :src="`./img/avatar${elem.avatar}.jpg`" alt="avatar_1">
                             <div class="text-main d-flex align-center">
-                                <div>
+                                <div class="content" v-for="(mess, messIndex) in elem.messages">
                                     {{ elem.name }}
-                                    <p>Ultimo accesso oggi alle {{ elem.messages[selectActive].date }}</p>
+                                    <p>Ultimo accesso oggi alle {{ mess.date }}</p>
                                 </div>
-                                <div class="icons d-flex">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    <i class="fa-solid fa-paperclip"></i>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                </div>
+                            </div>
+                            <div class="icons d-flex">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
                     </div>

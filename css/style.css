@@ -193,6 +193,10 @@
         justify-content: space-between;
     }
 
+    .text-main .content:not(div.content:last-child){
+        display: none;
+    }
+
     .main-contact img{
         width: 60px;
         border-radius: 100%;
