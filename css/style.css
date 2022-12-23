@@ -127,7 +127,7 @@
         margin-right: 20px;
     }
 
-    .contact .img-contact:not(.img-contact:first-child){
+    .contacts .img-contact:not(.img-contact:first-child){
         border-top: 1px solid #EAEAEA;
     }
 

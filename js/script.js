@@ -213,7 +213,7 @@ createApp({
             else{
                 return searchFriend = this.contacts;
             }
-            return searchFriend
+            return searchFriend 
         },
         removeMessage(messIndex){
             let remove = this.contacts[this.contactsActive].messages.splice(messIndex, 1);
