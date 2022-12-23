@@ -207,10 +207,14 @@ createApp({
             let searchFriend;
             if(this.search != ''){
                 searchFriend = this.contacts.filter((elem) => {
-                   return elem.name.toLowerCase().includes(this.search);
+                   return elem.name.toLowerCase().includes(this.search);                   
                 })
             }
             else{
+                return searchFriend = this.contacts;
+            }
+
+            if(searchFriend.length === 0){
                 return searchFriend = this.contacts;
             }
             return searchFriend 
