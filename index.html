@@ -59,11 +59,11 @@
                 <div class="col-right" :class="(contactsActive === index) ? 'active' : ''" v-for="(elem, index) in searchTask()">
                     <div class="chat-header d-flex align-center" >
                         <div class="main-contact d-flex align-center">
-                            <img :src="`./img/avatar${elem.avatar}.jpg`" alt="avatar_1">
+                            <img :src="`./img/avatar${elem.avatar}.jpg`" :alt="elem.name">
                             <div class="text-main d-flex align-center">
                                 <div>                                    
                                     {{ elem.name }}
-                                    <div class="content" v-for="(mess, messIndex) in elem.messages">
+                                    <div class="content" v-for="(mess, messIndex) in contacts[contactsActive].messages">
                                         <p>Ultimo accesso oggi alle {{ mess.date }}</p>
                                     </div>
                                 </div>
@@ -76,14 +76,14 @@
                         </div>
                     </div>
                     <div class="chat-main">
-                        <div v-for="(mess, messIndex) in elem.messages">
+                        <div v-for="(mess, messIndex) in contacts[contactsActive].messages">
                             <div class="send d-flex">
                                 <div class="position" v-if="(mess.status === 'sent')">
                                     <div class="send-mess d-flex align-center">
                                         <p>{{ mess.message }}</p>
                                         <div class="delete d-flex">
                                             <i class="fa fa-angle-down" aria-hidden="true" @click="accordion(index)"></i>
-                                            <div class="accordion-send" v-show="(!elem.visible) ? 'true' : ''">
+                                            <div class="accordion-send" v-show="(!contacts[contactsActive].visible) ? 'true' : ''">
                                                 <p>Message info</p>
                                                 <p @click="removeMessage(messIndex)">Delete message</p>
                                             </div>
@@ -101,7 +101,7 @@
                                             <p>{{ mess.message }}</p>
                                             <div class="delete d-flex">
                                                 <i class="fa fa-angle-down" aria-hidden="true" @click="accordion(index)"></i>
-                                                <div id="accordion-rece" v-show="(!elem.visible) ? 'true' : ''">
+                                                <div id="accordion-rece" v-show="(!contacts[contactsActive].visible) ? 'true' : ''">
                                                     <p>Message info</p>
                                                     <p @click="removeMessage(messIndex)">Delete message</p>
                                                 </div>
