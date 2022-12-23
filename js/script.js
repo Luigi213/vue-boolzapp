@@ -5,7 +5,6 @@ const {
 createApp({
     data() {
         return {
-            selectActive: 0,
             contactsActive: 0,
             newMessage: '',
             messageBot: 'ok',
